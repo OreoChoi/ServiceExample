@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.serviceexample">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+           사용자가 기기에서 어떤 서비스가 실행되는지 볼수 있습니다.
+           정체를 모르거나 신뢰할 수 없는 서비스는 사용자가 중단할수있으니
+           아래와 같이 android:desciption을 남겨 사용자에게 설명글을 남겨야합니다.
+        -->
+        <service android:name=".ForegroundService" android:exported="false"/>
+        <service android:name=".MyIntentService" android:exported="false"/>
+    </application>
+</manifest>
